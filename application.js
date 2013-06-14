@@ -16,7 +16,8 @@ require([
         name: "Doks",
         template: "main.html",
         metas: {
-            "description": "Searching documentation made easy"
+            "description": "Searching documentation made easy",
+            "viewport": "width=device-width, initial-scale=1, maximum-scale=1"
         },
         links: {
             "icon": yapp.Urls.static("images/favicon.png")
@@ -32,6 +33,7 @@ require([
             "change .search select": "doSearch",
             "submit .search form": "doSearch"
         },
+        doc: "JavaScript",
         docs: [],
 
         initialize: function() {
@@ -65,6 +67,7 @@ require([
 
         templateContext: function() {
             return {
+                currentDoc: this.doc,
                 docs: this.docs
             }
         },
@@ -73,6 +76,8 @@ require([
         search: function(doc, q) {
             var self = this;
             q = q || "";
+
+            if (_.indexOf(this.docs, doc) < 0) doc = _.first(this.docs);
 
             this.$(".search input").val(q);
             this.$(".search select").val(doc);
@@ -85,6 +90,7 @@ require([
                 this.components.results.setResults([]);
             }
 
+            this.doc = doc;
             this.queryResults(doc, q);
 
             return this;
@@ -100,7 +106,7 @@ require([
 
         /* (event) Mode api doc */
         modeDoc: function() {
-            this.search("", "");
+            this.search(this.doc, "");
             this.$(".page").addClass("mode-doc");
         }
     });

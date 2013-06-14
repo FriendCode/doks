@@ -9,7 +9,7 @@
             <input type="text" placeholder="<%- yapp.i18n.t("search.form.placeholder") %>" />
             <select>
                 <% _.each(docs, function(doc) { %>
-                    <option value="<%- doc %>"><%- doc %></option>
+                    <option value="<%- doc %>" <% if (doc == currentDoc) { %>selected<% } %>><%- doc %></option>
                 <% }); %>
             </select>
         </form>
