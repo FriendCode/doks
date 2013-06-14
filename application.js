@@ -39,15 +39,22 @@ require([
         initialize: function() {
             var self = this;
             Application.__super__.initialize.apply(this, arguments);
+            this.deferred = null;
+
 
             // Create search method with throttle
             this.queryResults = _.throttle(function(doc, q) {
-                // Do requests
+                self.components.results.setResults([]);
+
                 self.$(".search").addClass("mode-loading");
-                yapp.Requests.getJSON("http://api.doks.io/search?callback=?", {
+
+                if (self.deferred != null) self.deferred.resolve({results:[]});
+
+                self.deferred = yapp.Requests.getJSON("http://api.doks.io/search?callback=?", {
                     "q": q,
                     "docset": doc
                 }).always(function() {
+                    self.deferred = null;
                     self.$(".search").removeClass("mode-loading");
                 }).then(function(data) {
                     self.components.results.setResults(data.results);
@@ -55,7 +62,7 @@ require([
                 }, function() {
                     self.$(".search").addClass("mode-error");
                 });
-            }, 500);
+            }, 700);
 
             // Get docs list
             yapp.Requests.getJSON("http://api.doks.io/docs?callback=?").done(function(data) {
