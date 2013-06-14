@@ -9,7 +9,7 @@
             <input type="text" placeholder="<%- yapp.i18n.t("search.form.placeholder") %>" />
             <select>
                 <% _.each(docs, function(doc) { %>
-                    <option value="<%- doc %>"><%- doc %></option>
+                    <option value="<%- doc %>" <% if (doc == currentDoc) { %>selected<% } %>><%- doc %></option>
                 <% }); %>
             </select>
         </form>
@@ -23,7 +23,6 @@
         <p><%= yapp.i18n.t("doc.p2") %></p>
         <p><%= yapp.i18n.t("doc.p3") %></p>
         <p><%= yapp.i18n.t("doc.p4") %></p>
-        <p>&nbsp;</p>
         <p><b><%= yapp.i18n.t("doc.p5") %></b></p>
         <p class="docs"><% _.each(docs, function(doc) { %><a target="_blank" href="http://api.doks.io/search?q=s&language=<%- doc %>"><%- doc %></a>, <% }); %></p>
     </div>

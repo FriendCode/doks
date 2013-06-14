@@ -1,7 +1,7 @@
 {
     "lang": "English",
-    "title": "Doks",
-    "subtitle": "Searching documentation made easy",
+    "title": "Doks.io",
+    "subtitle": "Searching documentation made easy. (Web & API)",
     "learn": "How to use the API ?",
     "author": "With <b>&hearts;</b> by FriendCode",
 
@@ -12,9 +12,9 @@
     },
 
     "doc": {
-        "p1": "Doks API is really easy to use, the API is composed of a single powerfull method <b>search</b>.",
-        "p2": "The method only take two parameters : <b>q</b> and <b>language</b>.",
-        "p3": "Doks API can be use in client-side using JSONP by passing an argument <b>callback</b>.",
+        "p1": "Doks.io's API is really easy to use, the API is composed of a single powerfull method <b>search</b>.",
+        "p2": "The method takes two arguments : <b>q</b> and <b>docset</b>.",
+        "p3": "Doks.io's API can also be used client-side through JSONP by simply adding <b>callback</b> or <b>json</b> as a GET argument.",
         "p4": "Source code for the api server is avaiable on <b>GitHub</b> : <a target='_blank' href='https://github.com/FriendCode/doks-server'>FriendCode/doks-server</a>",
         "p5": "Supported documentations are : "
     },
