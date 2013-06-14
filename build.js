@@ -8,7 +8,7 @@ exports.config = {
     "baseUrl": "/",
 
     // Application name
-    "name": "Exemple",
+    "name": "Doks.io",
 
     // Mode debug
     "debug": false,
