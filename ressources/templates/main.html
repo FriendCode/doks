@@ -19,11 +19,11 @@
     </div>
     <div class="doc">
         <p><%= yapp.i18n.t("doc.p1") %></p>
-        <p class="method"><a target="_blank" href="http://api.doks.io/search?q=alert&language=javascript">api.doks.io/search</a></p>
+        <p class="method"><a target="_blank" href="http://api.doks.io/search?q=alert&docset=<%- currentDoc %>">api.doks.io/search</a></p>
         <p><%= yapp.i18n.t("doc.p2") %></p>
         <p><%= yapp.i18n.t("doc.p3") %></p>
         <p><%= yapp.i18n.t("doc.p4") %></p>
         <p><b><%= yapp.i18n.t("doc.p5") %></b></p>
-        <p class="docs"><% _.each(docs, function(doc) { %><a target="_blank" href="http://api.doks.io/search?q=s&language=<%- doc %>"><%- doc %></a>, <% }); %></p>
+        <p class="docs"><% _.each(docs, function(doc) { %><a target="_blank" href="http://api.doks.io/search?q=s&docset=<%- doc %>"><%- doc %></a>, <% }); %></p>
     </div>
 </div>
