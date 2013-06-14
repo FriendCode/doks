@@ -1,0 +1,22 @@
+{
+    "author": "Aaron O'Mullan",
+    "name": "doks-web",
+    "description": "Searching documentation made easy.",
+    "version": "0.0.1",
+    "homepage": "http://friendcode.github.io/doks/",
+    "dependencies": {
+        "express": "3.0.0",
+        "loadfire" : "0.0.1"
+    },
+    "engines": {
+        "node": "0.8.x",
+        "npm": "1.1.x"
+    },
+    "contributors": [
+        {
+            "name": "Samy Pessé",
+            "email": "samy.pesse@friendco.de",
+            "url": "https://friendco.de"
+        }
+    ]
+}

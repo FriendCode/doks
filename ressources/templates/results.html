@@ -1,0 +1,9 @@
+<div class="filter" data-filter=""><%- yapp.i18n.t("results.filter") %></div>
+<% _.each(results, function(result) { %>
+    <li data-type="<%- result.type.toLowerCase() %>">
+        <span class="type <%- result.type.toLowerCase() %>" data-filter="<%- result.type.toLowerCase() %>"><%- result.type %></span>
+        <div class="infos">
+            <p class="title"><a target="_blank" href="<%- result.path %>"><%- result.name %></a></p>
+        </div>
+    </li>
+<% }); %>
