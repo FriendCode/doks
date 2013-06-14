@@ -1,0 +1,30 @@
+<div class="page">
+    <div class="presentation">
+        <h1><a href="<%- yapp.urls.base("") %>"><%- yapp.i18n.t("title") %></a></h1>
+        <p><%- yapp.i18n.t("subtitle") %></p>
+        <a class="link learn" href="<%- yapp.urls.route("api") %>"><%- yapp.i18n.t("learn") %></a> <a target="_blank" class="link author" href="https://friendco.de"><%= yapp.i18n.t("author") %></a>
+    </div>
+    <div class="search">
+        <form>
+            <input type="text" placeholder="<%- yapp.i18n.t("search.form.placeholder") %>" />
+            <select>
+                <% _.each(docs, function(doc) { %>
+                    <option value="<%- doc %>"><%- doc %></option>
+                <% }); %>
+            </select>
+        </form>
+        <div class="message loading">loading</div>
+        <div class="message error">error</div>
+        <%= view.component("results") %>
+    </div>
+    <div class="doc">
+        <p><%= yapp.i18n.t("doc.p1") %></p>
+        <p class="method"><a target="_blank" href="http://api.doks.io/search?q=alert&language=javascript">api.doks.io/search</a></p>
+        <p><%= yapp.i18n.t("doc.p2") %></p>
+        <p><%= yapp.i18n.t("doc.p3") %></p>
+        <p><%= yapp.i18n.t("doc.p4") %></p>
+        <p>&nbsp;</p>
+        <p><b><%= yapp.i18n.t("doc.p5") %></b></p>
+        <p class="docs"><% _.each(docs, function(doc) { %><a target="_blank" href="http://api.doks.io/search?q=s&language=<%- doc %>"><%- doc %></a>, <% }); %></p>
+    </div>
+</div>
