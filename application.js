@@ -43,7 +43,7 @@ require([
 
 
             // Create search method with throttle
-            this.queryResults = _.throttle(function(doc, q) {
+            this.queryResults = _.debounce(function(doc, q) {
                 self.components.results.setResults([]);
 
                 self.$(".search").addClass("mode-loading");
