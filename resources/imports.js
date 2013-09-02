@@ -1,18 +1,18 @@
 define([
     "yapp/yapp",
-    "text!ressources/i18n/en.json",
+    "text!resources/i18n/en.json",
 ], function(yapp) {
 
     // Define loader for templates
-    yapp.Ressources.addNamespace("templates", {
+    yapp.Resources.addNamespace("templates", {
         loader: "http",
         base: "templates"
     });
 
     // Define loader for i18n
-    yapp.Ressources.addNamespace("i18n", {
+    yapp.Resources.addNamespace("i18n", {
         loader: "require",
-        base: "ressources/i18n",
+        base: "resources/i18n",
         extension: ".json"
     });
 
