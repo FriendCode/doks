@@ -1,18 +1,18 @@
 require([
     "Underscore",
-    "yapp/yapp",
-    "yapp/args",
+    "hr/hr",
+    "hr/args",
 
     "views/imports",
     "resources/imports"
-], function(_, yapp, args) {
-    // Configure yapp
-    yapp.configure(args, {
+], function(_, hr, args) {
+    // Configure hr
+    hr.configure(args, {
         logLevel: "none"
     });
 
     // Define base application
-    var Application = yapp.Application.extend({
+    var Application = hr.Application.extend({
         name: "Doks",
         template: "main.html",
         metas: {
@@ -20,7 +20,7 @@ require([
             "viewport": "width=device-width, initial-scale=1, maximum-scale=1"
         },
         links: {
-            "icon": yapp.Urls.static("images/favicon.png")
+            "icon": hr.Urls.static("images/favicon.png")
         },
         routes: {
             "search/:doc/:q": "search",
@@ -50,7 +50,7 @@ require([
 
                 if (self.deferred != null) self.deferred.resolve({results:[]});
 
-                self.deferred = yapp.Requests.getJSON("http://api.doks.io/search?callback=?", {
+                self.deferred = hr.Requests.getJSON("http://api.doks.io/search?callback=?", {
                     "q": q,
                     "docset": doc
                 }).always(function() {
@@ -65,7 +65,7 @@ require([
             }, 700);
 
             // Get docs list
-            yapp.Requests.getJSON("http://api.doks.io/docs?callback=?").done(function(data) {
+            hr.Requests.getJSON("http://api.doks.io/docs?callback=?").done(function(data) {
                 self.docs = _.sortBy(data, _.identity);
                 self.run();
             });

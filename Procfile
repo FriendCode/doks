@@ -1,1 +1,1 @@
-web: yapp.js all
+web: hr.js all

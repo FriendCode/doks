@@ -1,8 +1,8 @@
 define([
     "jQuery",
-    "yapp/yapp"
-], function($, yapp) {
-    var ResultsView = yapp.View.extend({
+    "hr/hr"
+], function($, hr) {
+    var ResultsView = hr.View.extend({
         tagName: "ul",
         className: "component-results",
         template: "results.html",
@@ -45,6 +45,6 @@ define([
     });
 
     /* Register template component */
-    yapp.View.Template.registerComponent("results", ResultsView);
+    hr.View.Template.registerComponent("results", ResultsView);
     return ResultsView;
 });
